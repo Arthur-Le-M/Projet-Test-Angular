@@ -1,0 +1,11 @@
+<a routerLink="/cd/{{unCd.id}}">
+  <div>
+      <h2>{{ unCd.title }}</h2> <!-- Affichage du titre -->
+      <img [src]="unCd.thumbnail" alt="image du cd" />
+      <p>Auteur : {{ unCd.author }}</p> <!-- Affichage de l'artiste -->
+      <p>Date : {{ unCd.dateDeSortie | date: "dd/MM/yyyy" }}</p> <!-- Affichage de la date de sortie -->
+      <p>Prix : {{ unCd.price | currency: "EUR"}}</p>
+      <p [ngStyle] = "{color: 'rgb(0' + unCd.quantite + ', 0)'}" > Quantité : {{unCd.quantite}}</p>
+      <button (click)="onAddCD()">Add quantity</button>
+  </div>
+</a>

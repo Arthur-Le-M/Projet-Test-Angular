@@ -1,0 +1,49 @@
+<div class="monForm">
+  <section class="subForm">
+    <h2>Nouveau CD</h2>
+    <form [formGroup]="formulaire">
+      <!-- Titre -->
+      <div class="form-group">
+        <label for="title">Titre</label>
+        <input type="text" id="title" formControlName="title" class="form-control">
+      </div>
+      <!-- Artiste -->
+      <div class="form-group">
+        <label for="author">Artiste</label>
+        <input type="text" id="author" formControlName="author" class="form-control">
+      </div>
+      <!-- Price -->
+      <div class="form-group">
+        <label for="price" class="form-label">Prix</label>
+        <input type="number" id="price" formControlName="price" class="form-control">
+      </div>
+      <!-- Thumbnail -->
+      <div class="form-group">
+        <label for="thumbnail" class="form-label">Image</label>
+        <input type="text" id="thumbnail" formControlName="thumbnail" class="form-control">
+      </div>
+      <!-- dateSortie -->
+      <div class="form-group">
+        <label for="dateDeSortie" class="form-label">Date de sortie</label>
+        <input type="date" id="dateDeSortie" formControlName="dateDeSortie" class="form-control">
+      </div>
+      <!-- quantite -->
+      <div class="form-group">
+        <label for="quantite" class="form-label">Quantité</label>
+        <input type="number" id="quantite" formControlName="quantite" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="formulaire.invalid" (click)="addCD()">Ajouter</button>
+    </form>
+  </section>
+  <section class="previsualisation">
+     <h2>Vue du CD</h2>
+      <div *ngIf="currentCD$ | async as unCD">
+        <h3 class="title">{{formulaire.value.title}}</h3>
+        <p class="author">{{formulaire.value.author}}</p>
+        <p class="price">{{formulaire.value.price}} €</p>
+        <img [src]="formulaire.value.thumbnail" alt="image du CD">
+        <p class="dateDeSortie">{{formulaire.value.dateDeSortie}}</p>
+        <p class="quantite">{{formulaire.value.quantite}}</p>
+      </div>
+  </section>
+</div>

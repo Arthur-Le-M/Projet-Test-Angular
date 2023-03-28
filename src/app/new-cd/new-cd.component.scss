@@ -1,0 +1,46 @@
+.monForm{
+  display: flex;
+  width: 100%;
+}
+
+.subForm{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+}
+
+.previsualisation{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+}
+
+// Jolie input stylisé
+input{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  display: inline-block;
+  margin-left: 30px;
+}
+
+//Label et input aligné
+label{
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+}
+
+.previsualisation div{
+  display: flex;
+}
+
+.previsualisation img{
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}

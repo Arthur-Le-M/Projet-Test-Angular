@@ -1,0 +1,17 @@
+div{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Button stylisé en mauve */
+button{
+  background-color: #369;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  margin: 10px;
+  cursor: pointer;
+}
