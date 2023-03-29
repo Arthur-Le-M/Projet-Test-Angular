@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { CD } from '../../models/cd';
 import { CdsService } from '../services/cds.service';
 
@@ -8,11 +9,11 @@ import { CdsService } from '../services/cds.service';
   styleUrls: ['./list-cds.component.scss']
 })
 export class ListCDsComponent implements OnInit {
-  listcd!: CD[];
+  listCds$!: Observable<CD[]>;
 
   constructor(private myCDsService: CdsService) { }
 
   ngOnInit(): void {
-    this.listcd = this.myCDsService.getAllCds();
+    this.listCds$ = this.myCDsService.getAllCds();
   }
 }
